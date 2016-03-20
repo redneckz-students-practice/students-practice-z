@@ -1,0 +1,79 @@
+{
+  "name": "students-practice-z",
+  "version": "0.0.1",
+  "author": "Alexander Alexandrov",
+  "description": "JavaScript FP & FRP & OOP & Design Patterns Practice",
+  "keywords": [
+    "JS",
+    "ES2016",
+    "learn",
+    "learning",
+    "practice",
+    "OOP",
+    "MVC"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redneckz-students-practice/z"
+  },
+  "bugs": {
+    "url": "https://github.com/redneckz-students-practice/z/issues"
+  },
+  "homepage": "https://github.com/redneckz-students-practice/z",
+  "scripts": {
+    "dev": "budo src/index.js:static/bundle.js --live --open",
+    "prebuild": "npm run test",
+    "build": "cross-env NODE_ENV=production browserify -e src/index.js > static/bundle.js",
+    "pretest": "npm run eslint",
+    "test": "cross-env NODE_ENV=test nyc mocha src/**/*.spec.js",
+    "eslint": "eslint src"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.spec.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "dependencies": {
+    "z-browser-utils": "file:local_modules/z-browser-utils",
+    "z-dependency-injection": "file:local_modules/z-dependency-injection",
+    "z-math": "file:local_modules/z-math",
+    "z-canvas-primitives": "file:local_modules/z-canvas-primitives",
+    "z-physics": "file:local_modules/z-physics"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-core": "~6.26.0",
+    "babel-eslint": "~8.2.1",
+    "babel-plugin-tailcall-optimization": "~1.0.12",
+    "babel-plugin-transform-class-properties": "~6.24.1",
+    "babel-plugin-transform-decorators-legacy": "~1.3.4",
+    "babel-plugin-transform-function-bind": "~6.22.0",
+    "babel-plugin-transform-object-rest-spread": "~6.26.0",
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-preset-env": "~1.6.1",
+    "babelify": "~8.0.0",
+    "browserify": "~15.0.0",
+    "budo": "~10.0.4",
+    "chai": "~4.1.2",
+    "cross-env": "~5.1.1",
+    "eslint": "~4.15.0",
+    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-plugin-import": "~2.8.0",
+    "mocha": "~4.1.0",
+    "nyc": "~11.4.1",
+    "sinon": "~4.1.3"
+  }
+}

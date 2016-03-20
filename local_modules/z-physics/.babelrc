@@ -1,0 +1,22 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "ie 11"],
+        "node": "current"
+      }
+    }]
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": true,
+      "polyfill": true,
+      "regenerator": true
+    }],
+    "tailcall-optimization",
+    "transform-function-bind",
+    "transform-decorators-legacy",
+    "transform-object-rest-spread",
+    "transform-class-properties"
+  ]
+}

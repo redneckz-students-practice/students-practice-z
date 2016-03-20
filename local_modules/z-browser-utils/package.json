@@ -1,0 +1,41 @@
+{
+  "name": "z-browser-utils",
+  "version": "0.0.1",
+  "author": "Alexander Alexandrov",
+  "description": "Browser Utils",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redneckz-students-practice/z"
+  },
+  "bugs": {
+    "url": "https://github.com/redneckz-students-practice/z/issues"
+  },
+  "homepage": "https://github.com/redneckz-students-practice/z",
+  "esnext": "src/index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "prebuild": "npm run eslint",
+    "build": "cross-env NODE_ENV=production babel src --out-dir lib",
+    "eslint": "eslint src"
+  },
+  "dependencies": {
+    "z-math": "file:../z-math"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-core": "~6.26.0",
+    "babel-eslint": "~8.0.3",
+    "babel-plugin-tailcall-optimization": "~1.0.12",
+    "babel-plugin-transform-class-properties": "~6.24.1",
+    "babel-plugin-transform-decorators-legacy": "~1.3.4",
+    "babel-plugin-transform-function-bind": "~6.22.0",
+    "babel-plugin-transform-object-rest-spread": "~6.26.0",
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-preset-env": "~1.6.1",
+    "cross-env": "~5.1.1",
+    "eslint": "~4.13.1",
+    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-plugin-import": "~2.8.0"
+  }
+}
